@@ -56,11 +56,10 @@
                 <td colspan="2"></td>
             </tr>
         </table>
-    <p id="user" hidden="hidden">{{Redis::get('user')}}</p>
+    <p id="user" hidden="hidden">{{ Cookie::get('user') }}</p>
 </body>
 <script type="text/javascript" src="{{ URL::asset('/js/jquery.min.js') }}"></script>
 <script type="text/javascript">
-    {{--var session =@json($session);--}}
     var session = $('#user').text();
     if(session == ""){
         window.location.href= "http://"+window.location.host+"/login";

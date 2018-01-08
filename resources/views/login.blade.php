@@ -39,12 +39,14 @@
                 </label>
             </div>
         </div>
-<p id="user" hidden="hidden">{{Redis::get('user')}}</p>
+    </div>
+</div>
+<p id="username" hidden="hidden">{{ Cookie::get('user') }}</p>
 </body>
 <script type="text/javascript" src="{{ URL::asset('/js/jquery.min.js') }}"></script>
 <script type="text/javascript">
-    var session = $('#user').text();
-    if(session != ""){
+    var session = $('#username').text();
+    if( session != ""){
         window.location.href ="http://"+window.location.host+"/search";
     }
 

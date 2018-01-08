@@ -30,7 +30,7 @@
     <button class="button1" type="button" name="ok">确定</button>
     <button class="button2" type="button" name="cancel">取消</button>
 </div>
-<p id="user" hidden="hidden">{{Redis::get('user')}}</p>
+<p id="user" hidden="hidden">{{Cookie::get('user')}}</p>
 </body>
 <script type="text/javascript" src="{{ URL::asset('/js/jquery.min.js') }}"></script>
 <script type="text/javascript">
