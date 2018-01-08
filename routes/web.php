@@ -41,12 +41,13 @@ Route::get('/login1',"TeacherController@login");
 Route::get('/teacherinfo',"TeacherController@show");
 Route::get('/delteacher',"TeacherController@delteacher");
 
-Route::get('/showtid','TeacherController@showtid');
+Route::get('/showtid','TeacherController@showTeaStu');
 
-Route::get('/logout',function (Request $request){
-
-    Redis::set('user',null);
-    return view("login");
+Route::get('/logout',function (){
+    $cookie = Cookie::forget('user');
+    Cookie::queue('user',null,1440,$httpOnly=false);
+//    return view("login");
+     return view("login");
 });
 
 Route::get('/showname','TeacherController@showname');
