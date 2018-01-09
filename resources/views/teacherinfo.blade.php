@@ -90,6 +90,7 @@
                 url:'/delteacher?tname='+tname,
                 success:function (data) {
                     temp.remove();
+                    window.location.href = "http://"+window.location.host+"/register";
                 }
             });
         } else if($(this).text()== "查询"){
