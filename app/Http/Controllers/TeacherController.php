@@ -79,7 +79,7 @@ class TeacherController extends Controller
 //            Redis::del('user');
 //            return view('teacher_register');
 //        }
-//        return $temp;
+        return $temp;
     }
 //  显示老师的学生
     public function showTeaStu(Request $request){
