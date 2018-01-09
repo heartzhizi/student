@@ -72,11 +72,14 @@ class TeacherController extends Controller
         $tname = $request->input('tname');
         $teacher = new TeacherService();
         $temp = $teacher->deleteTeacher($tname);
-        if($tname == Redis::get('user')){
-            Redis::del('user');
-            return view('teacher_register');
-        }
-        return $temp;
+
+        $cookie = Cookie::forget('user');
+        Cookie::queue('user',null,1440,$httpOnly=false);
+//        if($tname == Redis::get('user')){
+//            Redis::del('user');
+//            return view('teacher_register');
+//        }
+//        return $temp;
     }
 //  显示老师的学生
     public function showTeaStu(Request $request){
